@@ -17,7 +17,7 @@ const Navbar = () => {
     const navItems = <>
         <li><NavLink to='/'>Home</NavLink></li>
         <li><NavLink to='/rooms'>Rooms</NavLink></li>
-        <li><NavLink to='/booking'>MY Booking</NavLink></li>
+        <li><NavLink to='/booking'>My Booking</NavLink></li>
         </>
 
     return (
@@ -32,8 +32,8 @@ const Navbar = () => {
                             {navItems}
                         </ul>
                     </div>
-                    {/* <img src={logo} alt="" /> */}
-                    <img className="w-[200px]" src={logo} alt="" />
+                    
+                    <img className="w-[180px]" src={logo} alt="" />
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -48,7 +48,7 @@ const Navbar = () => {
                         {
                             user?.email ? <div className="dropdown dropdown-end">
                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
+                                    <div className="w-16 rounded-full">
                                         {
                                             user && <img src={user.photoURL} />
                                         }
@@ -56,13 +56,13 @@ const Navbar = () => {
                                 </label>
                                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                                     <li>
-                                        <button className="btn btn-sm  btn-ghost">{
+                                        <button className="btn btn-sm text-blue-600 font-bold  btn-ghost">{
                                             user && <p>{user.displayName}</p>
                                         }</button>
 
                                     </li>
                                     <li>
-                                        <button onClick={handleOut} className="btn btn-sm  btn-ghost">Logout</button>
+                                        <button onClick={handleOut} className="btn btn-sm text-green-600 font-bold btn-ghost">Logout</button>
 
                                     </li>
                                 </ul>

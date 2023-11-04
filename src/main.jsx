@@ -12,6 +12,8 @@ import Home from './Components/Pages/Home/Home';
 import AuthProvider from './Components/Provider/AuthProvider';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
+import MyBooking from './Components/Pages/Bookings/MyBooking';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,10 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>
+      },
+      {
+        path:'/booking',
+        element:<PrivateRoute><MyBooking></MyBooking></PrivateRoute>
       }
     ]
   },
