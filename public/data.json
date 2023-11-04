@@ -1,0 +1,39 @@
+[
+    {
+      "room_image": "https://i.ibb.co/Lz4XqNH/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-hotel-with-tv-1-min.jpg",
+      "room_description": "A cozy and spacious room with a king-sized bed, a sofa, a desk, and a balcony overlooking the city. The room has a private bathroom with a shower and a bathtub, and a mini-fridge with complimentary drinks and snacks. The room also has free Wi-Fi, a flat-screen TV, and a safe.",
+      "room_name": "Deluxe King Room",
+      "room_price": "150 "
+    },
+    {
+      "room_image": "https://i.ibb.co/whmGXQw/3d-rendering-beautiful-comtemporary-luxury-bedroom-suite-hotel-with-tv-min.jpg",
+      "room_description": "A modern and elegant room with a queen-sized bed, a wardrobe, a coffee table, and a large window with a view of the garden. The room has a shared bathroom with a hairdryer and toiletries, and a kitchenette with a microwave, a kettle, and a toaster. The room also has free Wi-Fi, a smart TV, and an air conditioner.",
+      "room_name": "Superior Queen Room",
+      "room_price": "100 "
+    },
+    {
+      "room_image": "https://i.ibb.co/LzMjkkZ/3d-rendering-luxury-bedroom-suite-resort-hotel-with-twin-bed-living-min.jpg",
+      "room_description": "A rustic and charming room with a double bed, a fireplace, a rocking chair, and a bookshelf with a selection of books. The room has a private bathroom with a clawfoot tub and a bidet, and a dining area with a table and chairs. The room also has free Wi-Fi, a radio, and a fan.",
+      "room_name": "Classic Double Room",
+      "room_price": "80 "
+    },
+    {
+      "room_image": "https://i.ibb.co/Fs89HcL/2150683419.jpg",
+      "room_description": "A bright and colorful room with two single beds, a bunk bed, a dresser, and a wall mural with a cartoon theme. The room has a private bathroom with a shower and a sink, and a play area with a toy box and a board game. The room also has free Wi-Fi, a TV with a DVD player, and a heater.",
+      "room_name": "Family Room",
+      "room_price": "120 "
+    },
+    {
+      "room_image": "https://i.ibb.co/Hqm0W9Z/romantic-bedroom-min.jpg",
+      "room_description": "A luxurious and romantic room with a king-sized canopy bed, a jacuzzi, a chandelier, and a balcony with a view of the sea. The room has a private bathroom with a steam shower and a vanity, and a minibar with a champagne bottle and glasses. The room also has free Wi-Fi, a satellite TV, and a stereo.",
+      "room_name": "Honeymoon Suite",
+      "room_price": "200 "
+    },
+    {
+      "room_image": "https://i.ibb.co/RyJb78V/white-bedroom-hotel-min-min.jpg",
+      "room_description": "A simple and clean room with a single bed, a desk, a chair, and a closet. The room has a shared bathroom with a toilet and a shower, and a common area with a sofa and a TV. The room also has free Wi-Fi, a phone, and an alarm clock.",
+      "room_name": "Standard Single Room",
+      "room_price": "50 "
+    }
+  ]
+  
