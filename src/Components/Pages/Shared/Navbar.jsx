@@ -1,7 +1,18 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from '../Shared../../../Pages../../../assets/hotel.jpg'
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
+
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
     const navItems = <>
         <li><NavLink to='/'>Home</NavLink></li>
@@ -33,7 +44,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                
                     {/* for image drop down */}
-                    {/* <div>
+                    <div>
                         {
                             user?.email ? <div className="dropdown dropdown-end">
                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -58,11 +69,11 @@ const Navbar = () => {
                             </div>
                                 :
                                 <Link to='/login'>
-                                    <button className="btn btn-sm mr-2  btn-outline btn-warning">Login</button>
+                                    <button className="btn  mr-2  btn-outline btn-accent">Login</button>
                                 </Link>
                         }
-                    </div> */}
-                    <button className='btn btn-outline btn-primary'>Appointment</button>
+                    </div>
+                    
                 </div>
             </div>
         </div>
