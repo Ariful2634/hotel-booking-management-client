@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from '../Shared../../../Pages../../../assets/hotel.jpg'
+import logo from '../Shared../../../Pages../../../assets/hotel-removebg-preview.png'
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 

@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 
 const RoomDetails = () => {
@@ -8,6 +8,7 @@ const RoomDetails = () => {
     console.log(rooms, id)
 
     const room = rooms.find(room => room._id == id)
+    const {_id}=room
 
     return (
         <div className="flex justify-center">
@@ -23,7 +24,7 @@ const RoomDetails = () => {
                     </div>
                     <div className="card-actions justify-between items-center mt-4">
                         <h2 className="font-bold">Availability: <span>Available</span></h2>
-                        <button className="btn btn-accent font-bold ">Book Now</button>
+                        <Link to={`/bookNow/${_id}`}><button className="btn btn-accent font-bold ">Book Now</button></Link>
                     </div>
                 </div>
             </div>
