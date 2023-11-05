@@ -1,9 +1,11 @@
+import Parallax from "./Banner/Parallax";
 
 
 const Home = () => {
     return (
         <div>
-            <h2>this is home</h2>
+            
+            <Parallax></Parallax>
         </div>
     );
 };
