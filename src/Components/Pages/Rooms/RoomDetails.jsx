@@ -24,7 +24,7 @@ const RoomDetails = () => {
                     </div>
                     <div className="card-actions justify-between items-center mt-4">
                         <h2 className="font-bold">Availability: <span>Available</span></h2>
-                        <Link to={`/bookNow/${_id}`}><button className="btn btn-accent font-bold ">Book Now</button></Link>
+                        <Link to={`/bookNow/${_id}`}><button className="btn  text-white font-bold bg-[#FF3811]">Book Now</button></Link>
                     </div>
                 </div>
             </div>

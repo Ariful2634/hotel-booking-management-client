@@ -7,6 +7,7 @@ import Swal from "sweetalert2";
 const Login = () => {
 
     const {loginUser,googleIn}=useContext(AuthContext)
+    const [error,setError]=useState("")
     const[show,setShow]=useState(false)
     const location=useLocation()
     const navigate = useNavigate()
@@ -16,6 +17,8 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email,password)
+
+        setError("")
 
         loginUser(email,password)
         .then(res=>{
@@ -32,6 +35,7 @@ const Login = () => {
               
         })
         .catch(err=>{
+            setError(err.message)
             console.log(err)
         })
 
@@ -50,6 +54,7 @@ const Login = () => {
               navigate(location?.state ? location.state : '/')
         })
         .catch(error=>{
+            
             console.log(error)
         })
     }
@@ -79,8 +84,18 @@ const Login = () => {
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
+                        <div>
+                                {
+                                    error && <p className="text-red-600 font-bold">{error}</p>
+                                }
+                            </div>
                         <div className="form-control mt-6">
-                            <button className="btn text-white font-bold bg-primary">Login</button>
+                        <button
+                                
+                                className=" text-white font-[700] rounded-lg py-4 px-6 w-full bg-gradient-to-r from-pink-500 to-yellow-500 "
+                            >
+                                Login
+                            </button>
                         </div>
                     </form>
                     <h3 className='text-center mb-3 font-bold'>Or Sign In with</h3> <hr />

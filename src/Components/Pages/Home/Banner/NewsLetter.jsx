@@ -11,11 +11,13 @@ const NewsLetter = () => {
         e.preventDefault()
         const email = e.target.email.value;
         console.log(email)
+       
         Swal.fire(
             'Congratulations',
             'You Successfully subscribed on monthly newsletter!',
             'success'
           )
+          e.target.reset()
 
     }
 
