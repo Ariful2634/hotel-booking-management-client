@@ -1,5 +1,5 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
-
+import { FaShoppingCart } from 'react-icons/fa';
 
 const RoomDetails = () => {
 
@@ -24,7 +24,7 @@ const RoomDetails = () => {
                     </div>
                     <div className="card-actions justify-between items-center mt-4">
                         <h2 className="font-bold">Availability: <span>Available</span></h2>
-                        <Link to={`/bookNow/${_id}`}><button className="btn  text-white font-bold bg-[#FF3811]">Book Now</button></Link>
+                        <Link to={`/bookNow/${_id}`}><button className="btn  text-white font-bold bg-[#FF3811]"><FaShoppingCart></FaShoppingCart>Book Now</button></Link>
                     </div>
                 </div>
             </div>

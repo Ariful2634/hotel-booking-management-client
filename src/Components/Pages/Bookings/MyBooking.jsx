@@ -1,9 +1,30 @@
-
+import { useContext, useEffect, useState } from "react";
+import axios from "axios";
+import Book from "./Book";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyBooking = () => {
+
+    const { user } = useContext(AuthContext)
+    const [booking, setBooking] = useState([])
+
+    const url = `http://localhost:5000/bookings?email=${user?.email}`
+
+    useEffect(()=>{
+        axios.get(url)
+        .then(res=>{
+            setBooking(res.data)
+        })
+    },[url])
+
     return (
         <div>
-            <h2>My Booking</h2>
+           
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 lg:ml-28 mt-16">
+                {
+                    booking.map(book=><Book key={book._id} book={book}></Book>)
+                }
+            </div>
         </div>
     );
 };

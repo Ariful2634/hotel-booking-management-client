@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/bookNow/:id',
-        element:<Bookings></Bookings>,
+        element:<PrivateRoute><Bookings></Bookings></PrivateRoute>,
         loader:()=>fetch('http://localhost:5000/rooms')
         
       }

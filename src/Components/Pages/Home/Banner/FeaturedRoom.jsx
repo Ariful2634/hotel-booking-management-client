@@ -2,6 +2,7 @@ import room from '../Banner../../../Home../../../Pages../../../assets/romantic-b
 import room1 from '../Banner../../../Home../../../Pages../../../assets/2150683419.jpg'
 import { Link } from 'react-router-dom';
 import 'aos/dist/aos.css';
+import { FaShoppingCart } from 'react-icons/fa';
 
 
 const FeaturedRoom = () => {
@@ -17,7 +18,7 @@ const FeaturedRoom = () => {
                    
                 </div>
                 <div className='text-center mb-4'>
-                   <Link to='/rooms'> <button className='btn btn-warning font-bold'>Book Now</button></Link>
+                   <Link to='/rooms'> <button className='btn btn-warning font-bold'><FaShoppingCart></FaShoppingCart>Book Now</button></Link>
                 </div>
             </div>
             <div className="card card-compact lg:w-[550px] bg-base-100 shadow-xl">
@@ -28,7 +29,7 @@ const FeaturedRoom = () => {
                    
                 </div>
                 <div className='text-center mb-4'>
-                   <Link to='/rooms'> <button className='btn btn-warning font-bold'>Book Now</button></Link>
+                   <Link to='/rooms'> <button className='btn btn-warning font-bold'><FaShoppingCart></FaShoppingCart>Book Now</button></Link>
                 </div>
             </div>
             </div>

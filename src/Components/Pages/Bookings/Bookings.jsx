@@ -1,10 +1,10 @@
 /* eslint-disable no-undef */
-// import axios from "axios";
+import axios from "axios";
 import { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
@@ -41,34 +41,34 @@ const Bookings = () => {
          }
          console.log(booking)
 
-        //  axios.post('http://localhost:5000/bookings',booking)
-        //  .then(res=>{
-        //     console.log(res.data)
-        //     if(res.data.insertedId){
-        //         Swal.fire(
-        //             'Congratulations',
-        //             'Service Booked Successfully!',
-        //             'success'
-        //           )
-        //     }
-        //  })
+         axios.post('http://localhost:5000/bookings',booking)
+         .then(res=>{
+            console.log(res.data)
+            if(res.data.insertedId){
+                Swal.fire(
+                    'Congratulations',
+                    'Service Booked Successfully!',
+                    'success'
+                  )
+            }
+         })
 
     }
 
     return (
         <div>
-        <h2>name: {book.room_name}</h2>
+        <h2 className="font-bold text-center mb-6 text-xl">Room Name: <span className="text-blue-700">{book.room_name}</span></h2>
         <form onSubmit={handleForm}>
             <div className="flex gap-5">
                 <div className="form-control w-1/2">
                     <label className="label">
-                        <span className="label-text"></span>
+                        <span className="label-text">Your Name</span>
                     </label>
                     <label className="input-group">
                         <input type="text" name="name" placeholder=" Name" className="input input-bordered w-full" />
                     </label>
                 </div>
-                <div className="form-control lg:ml-4">
+                <div className="form-control w-1/2 lg:ml-4">
                         <label className="label">
                             <span className="label-text">Due Date</span>
                         </label>
@@ -98,7 +98,7 @@ const Bookings = () => {
                         <span className="label-text"></span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="price" placeholder="Service Price" defaultValue={book.room_price} className="input input-bordered w-full" />
+                        <input type="text" name="price" placeholder="Price" defaultValue={'$' + book.room_price} className="input input-bordered w-full" />
                     </label>
                 </div>
             </div>

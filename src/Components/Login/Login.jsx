@@ -3,6 +3,8 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { FaGoogle } from 'react-icons/fa';
+
 
 const Login = () => {
 
@@ -101,7 +103,7 @@ const Login = () => {
                     <h3 className='text-center mb-3 font-bold'>Or Sign In with</h3> <hr />
                     <div className='text-center mb-3 mt-3'>
                         
-                        <button onClick={handleGoogle} className='btn btn-outline'>Google</button>
+                        <button onClick={handleGoogle} className='btn btn-outline'><FaGoogle></FaGoogle>Google</button>
                     </div>
                     <div>
                     <p className='text-center mb-4'>Already have an account? <Link className='text-orange-600 font-bold' to='/register'>Register</Link></p>
