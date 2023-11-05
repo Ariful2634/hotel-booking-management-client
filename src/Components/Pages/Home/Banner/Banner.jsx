@@ -1,4 +1,5 @@
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
@@ -13,7 +14,7 @@ const Banner = () => {
             <p className="text-white  text-center pt-10 text-3xl font-bold mr-16">Click on the Book Now button</p>
             </Marquee>
             <div className="text-center mt-8">
-                <button className="btn font-bold">Book Now</button>
+                <Link to='/rooms'><button className="btn font-bold rounded-full">Book Now</button></Link>
             </div>
         </div>
     );

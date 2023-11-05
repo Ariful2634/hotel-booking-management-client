@@ -1,4 +1,5 @@
 import Banner from "./Banner/Banner";
+import FeaturedRoom from "./Banner/FeaturedRoom";
 import Parallax from "./Banner/Parallax";
 
 
@@ -8,6 +9,7 @@ const Home = () => {
             
             <Parallax></Parallax>
             <Banner></Banner>
+            <FeaturedRoom></FeaturedRoom>
         </div>
     );
 };
