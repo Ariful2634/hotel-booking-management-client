@@ -1,3 +1,4 @@
+import Banner from "./Banner/Banner";
 import Parallax from "./Banner/Parallax";
 
 
@@ -6,6 +7,7 @@ const Home = () => {
         <div>
             
             <Parallax></Parallax>
+            <Banner></Banner>
         </div>
     );
 };
