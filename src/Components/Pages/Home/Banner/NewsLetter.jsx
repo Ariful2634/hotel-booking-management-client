@@ -1,6 +1,7 @@
 
 import logo from '../Banner../../../Home../../../Pages../../../assets/login.svg'
 import Swal from "sweetalert2";
+import 'aos/dist/aos.css';
 
 
 const NewsLetter = () => {
@@ -22,7 +23,8 @@ const NewsLetter = () => {
     }
 
     return (
-        <div className="flex justify-center">
+        <div data-aos="fade-right">
+            <div className="flex justify-center">
             <div className="w-[450px] shadow-xl  mt-16 rounded-lg ">
                 <div className="py-10 md:py-14 px-8 color-charcoalGrey">
                     <h1 className="text-4xl lg:text-5xl font-bold mb-5 text-center">Stay updated!</h1>
@@ -57,6 +59,7 @@ const NewsLetter = () => {
                 </div>
 
             </div>
+        </div>
         </div>
     );
 };

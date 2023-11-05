@@ -1,9 +1,11 @@
 import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
+import 'aos/dist/aos.css';
 
 const Banner = () => {
     return (
-        <div className="bg-[url('https://i.ibb.co/m5G21Jp/fernando-alvarez-rodriguez-M7-Gdd-Pq-Jowg-unsplash.jpg')] rounded-xl mt-8 h-[500px] bg-no-repeat bg-cover bg-center">
+        <div data-aos="flip-up">
+            <div className="bg-[url('https://i.ibb.co/m5G21Jp/fernando-alvarez-rodriguez-M7-Gdd-Pq-Jowg-unsplash.jpg')] rounded-xl mt-8 h-[500px] bg-no-repeat bg-cover bg-center">
             <h1 className="text-white text-center pt-10 text-5xl font-bold italic">Luxuries Hotel</h1>
             <h2 className="text-white text-center pt-10 text-3xl font-bold ">Special Offer</h2>
             <p className="text-white text-center pt-10 text-2xl font-bold ">Get 30% off on pre-booking</p>
@@ -17,7 +19,9 @@ const Banner = () => {
                 <Link to='/rooms'><button className="btn font-bold rounded-full">Book Now</button></Link>
             </div>
         </div>
+        </div>
     );
 };
+
 
 export default Banner;

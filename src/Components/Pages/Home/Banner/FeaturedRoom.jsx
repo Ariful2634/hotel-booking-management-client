@@ -1,10 +1,12 @@
 import room from '../Banner../../../Home../../../Pages../../../assets/romantic-bedroom-min.jpg'
 import room1 from '../Banner../../../Home../../../Pages../../../assets/2150683419.jpg'
 import { Link } from 'react-router-dom';
+import 'aos/dist/aos.css';
+
 
 const FeaturedRoom = () => {
     return (
-        <div >
+        <div data-aos="flip-left">
             <h2 className='font-bold text-blue-600 text-center text-3xl mt-16 mb-8'>Our Featured Rooms</h2>
             <div className='flex flex-col lg:flex-row gap-16'>
             <div className="card card-compact lg:w-[550px] bg-base-100 shadow-xl">
