@@ -1,15 +1,22 @@
-/* eslint-disable no-undef */
-import axios from "axios";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import Swal from "sweetalert2";
+import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
+const UpdateBooking = () => {
 
-const Bookings = () => {
+    const {user}=useContext(AuthContext)
 
+    const updates = useLoaderData()
+    const {id}=useParams()
+    console.log(updates)
+    console.log(id)
+
+    const update = updates.find(updates=>updates._id==id)
+    console.log(update)
+    const {_id}=update
 
     const [datePicker, setDatePicker] = useState(null);
 
@@ -17,60 +24,57 @@ const Bookings = () => {
     setDatePicker(date);
   };
 
-    const {user}=useContext(AuthContext)
-
-    const books = useLoaderData()
-    const { id } = useParams()
-    console.log(books, id)
-
-    const book = books.find(book => book._id == id)
-    const {_id,room_image,room_name}=book
-
     const handleForm = e=>{
         e.preventDefault()
         const form = e.target
-        const name = form.name.value
+        
         const date = form.date.value
-        const price = form.price.value
-        const email = user?.email
+       
+        
 
-        const booking = {
-            RoomName:room_name, room_image,
-            roomId:_id,
-             name,date,price,email
+        const newUpdate = {
+           date
          }
-         console.log(booking)
+         console.log(newUpdate)
 
-         axios.post('http://localhost:5000/bookings',booking)
-         .then(res=>{
-            console.log(res.data)
-            if(res.data.insertedId){
+         fetch(`http://localhost:5000/update/${_id}`,{
+            method:'PUT',
+            headers:{
+                'content-type':'application/json'
+            },
+            body: JSON.stringify(newUpdate)
+         })
+         .then(res=>res.json())
+         .then(data=>{
+            console.log(data)
+            if(data.modifiedCount > 0){
                 Swal.fire(
                     'Congratulations',
-                    'Room Booked Successfully!',
+                    'Updated Successfully!',
                     'success'
                   )
             }
          })
 
+        
+
     }
 
     return (
         <div>
-        <h2 className="font-bold text-center mb-6 text-xl">Room Name: <span className="text-blue-700">{book.room_name}</span></h2>
-        <form onSubmit={handleForm}>
+            <form onSubmit={handleForm}>
             <div className="flex gap-5">
                 <div className="form-control w-1/2">
                     <label className="label">
                         <span className="label-text">Your Name</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="name" placeholder=" Name" className="input input-bordered w-full" />
+                        <input type="text" name="name" placeholder=" Name" defaultValue={update.name} className="input input-bordered w-full" />
                     </label>
                 </div>
                 <div className="form-control w-1/2 lg:ml-4">
                         <label className="label">
-                            <span className="label-text">Due Date</span>
+                            <span className="label-text">Add New Date</span>
                         </label>
                         <div className="input-group">
                             <DatePicker
@@ -98,7 +102,7 @@ const Bookings = () => {
                         <span className="label-text"></span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="price" placeholder="Price" defaultValue={'$' + book.room_price} className="input input-bordered w-full" />
+                        <input type="text" name="price" placeholder="Price" defaultValue={update.price} className="input input-bordered w-full" />
                     </label>
                 </div>
             </div>
@@ -107,8 +111,8 @@ const Bookings = () => {
                 <button className="btn btn-block  bg-[#FF3811]">Submit</button>
             </div>
         </form>
-    </div>
+        </div>
     );
 };
 
-export default Bookings;
+export default UpdateBooking;
