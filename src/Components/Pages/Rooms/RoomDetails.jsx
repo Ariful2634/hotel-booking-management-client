@@ -10,11 +10,13 @@ const RoomDetails = () => {
 
     const [avil,setAvail]=useState([])
     const rooms = useLoaderData()
+    const [getReview, setGetReview]=useState([])
     const { id } = useParams()
-    console.log(rooms, id)
+    // console.log(rooms, id)
 
     const room = rooms.find(room => room._id == id)
     const {_id}=room
+    console.log(_id)
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`
 
@@ -24,7 +26,23 @@ const RoomDetails = () => {
         .then(data=>setAvail(data))
     },[url])
 
+
+
     const val = avil.find(avil=>avil.roomId==_id)
+    // console.log(avil)
+
+
+   
+     // review
+     useEffect(()=>{
+        fetch('http://localhost:5000/review')
+        .then(res=>res.json())
+        .then(data=>setGetReview(data))
+    },[])
+
+    // const review = getReview.map(rev=>rev)
+    const reviews=getReview.find(view=>view.reviewId==_id)
+    console.log(reviews)
 
     const handleDisable = ()=>{
         Swal.fire({
@@ -37,9 +55,9 @@ const RoomDetails = () => {
     
 
     return (
-        <div className="flex justify-center">
+        <div className="flex flex-col lg:flex-row  lg:justify-between mt-10">
             
-            <div className="card w-96 md:w-[550px] lg:w-[550px] bg-base-100 shadow-xl text-center">
+            <div className="card w-96 md:w-[550px] lg:w-[550px]  bg-base-100 shadow-xl ml-5 md:ml-28 lg:ml-0 text-center">
                 <figure><img src={room.room_image} alt="Shoes" /></figure>
                 <div className="card-body">
                     
@@ -64,6 +82,18 @@ const RoomDetails = () => {
                     </div>
                 </div>
             </div>
+
+            {
+                reviews && (<div>
+                    <h2 className="text-blue-600 text-center font-bold italic mt-28 mb-4 text-2xl">Reviews From Our User</h2>
+                    <div className="shadow-xl p-8 space-y-4 lg:w-[500px] rounded-lg">
+                    <h2 className="font-bold text-xl"> <span className="text-blue-600">Name:</span> {reviews?.name}</h2>
+                    <p className="font-bold text-xl"><span className="text-blue-600">Rating:</span> {reviews?.rating}</p>
+                    <p className="font-bold text-xl text-green-600">{reviews?.des}</p>
+                    <p className="font-bold text-xl">{reviews?.time}</p>
+                </div>
+                </div>)
+            }
         </div>
     );
 };

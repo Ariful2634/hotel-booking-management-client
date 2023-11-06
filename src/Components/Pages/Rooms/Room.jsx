@@ -34,15 +34,15 @@ const Room = ({ room }) => {
 
  
     const reviews = review.find(review => review.RoomName == room_name)
-    console.log(review)
-    // //  console.log(rev)
+    
 
     const handleReview = e=>{
         e.preventDefault()
         const form = e.target;
         const name = form.name.value;
+        const des = form.area.value;
         const rating = form.rating.value;
-        const send = {name,rating,time}
+        const send = {name,rating,time, reviewId:_id,des}
         console.log(send)
 
         axios.post('http://localhost:5000/review', send)
@@ -89,7 +89,7 @@ const Room = ({ room }) => {
                             </label>
                             <input type="text" placeholder="Add Rating" name="rating" className="input input-bordered" required />
                         </div>
-                        <textarea className="textarea textarea-accent mt-4 w-[360px]" placeholder="Comment"></textarea>
+                        <textarea className="textarea textarea-accent mt-4 w-[360px]" name="area" placeholder="Comment"></textarea>
                        
                         <p>{moment().format('MMMM Do YYYY, h:mm:ss a')}</p>
 
