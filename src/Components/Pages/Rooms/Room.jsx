@@ -106,7 +106,7 @@ const Room = ({ room }) => {
                 
             </div>
             ) :
-            <p>No review option</p>
+            <p className="text-center font-bold text-red-600 text-x mt-6">You have not booked this room yet. <br /> That is why there is no review option</p>
            }
         </div>
     );

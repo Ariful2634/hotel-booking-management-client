@@ -3,6 +3,8 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { AiTwotoneStar } from 'react-icons/ai';
+
 
 const RoomDetails = () => {
 
@@ -87,8 +89,8 @@ const RoomDetails = () => {
                 reviews && (<div>
                     <h2 className="text-blue-600 text-center font-bold italic mt-28 mb-4 text-2xl">Reviews From Our User</h2>
                     <div className="shadow-xl p-8 space-y-4 lg:w-[500px] rounded-lg">
-                    <h2 className="font-bold text-xl"> <span className="text-blue-600">Name:</span> {reviews?.name}</h2>
-                    <p className="font-bold text-xl"><span className="text-blue-600">Rating:</span> {reviews?.rating}</p>
+                    <h2 className="font-bold text-xl"> <span className="text-blue-600">Name: </span> {reviews?.name}</h2>
+                    <p className="font-bold text-xl flex items-center gap-1"><span className="text-blue-600">Rating: </span>    {reviews?.rating}<AiTwotoneStar></AiTwotoneStar></p>
                     <p className="font-bold text-xl text-green-600">{reviews?.des}</p>
                     <p className="font-bold text-xl">{reviews?.time}</p>
                 </div>
