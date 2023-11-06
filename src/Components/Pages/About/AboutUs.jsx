@@ -19,45 +19,45 @@ const AboutUs = () => {
                     <li>Teamwork: Our team collaborates to achieve our goals and serve our customers better.</li>
                 </ul>
             </div>
-            <div  className="shadow-xl p-8 mt-6 rounded-lg border border-purple-600">
+            <div className="shadow-xl p-8 mt-6 rounded-lg border border-purple-600">
                 <h2 className="font-bold text-purple-600 text-2xl text-center mb-4">Our Team and Management</h2>
                 <p className="font-bold"> Book My Hotel is powered by a dedicated team of professionals who are passionate about travel and technology. Meet some of our key team members and management:</p>
                 <div >
-                   <div className="flex justify-around mt-4 mb-4 font-semibold">
-                   <div >
-                       <h3>Md. Ariful Islam</h3>
-                       <p>CEO and Founder</p>
-                   </div>
-                  
-                  <div>
-                  <h3>Md. Shariful Islam</h3>
-                       <p>Manager</p>
-                  </div>
-                  
-                   </div>
-                   <div className="flex justify-around mt-4 mb-4 font-semibold mr-4">
-                   <div>
-                  <h3>Md. Arif Islam</h3>
-                       <p>Receptionist</p>
-                  </div>
-                   <div>
-                   <h3>Md. Asif Islam</h3>
-                        <p>Staff</p>
-                   </div>
-                   
-                   </div>
-                   <div className="flex justify-around mt-4 mb-4 font-semibold mr-2">
-                  
-                   <div>
-                   <h3>Md. Sobuj Islam</h3>
-                        <p>Staff</p>
-                   </div>
-                   <div>
-                   <h3>Md. Salam Islam</h3>
-                        <p>Staff</p>
-                   </div>
-                  
-                   </div>
+                    <div className="flex justify-around mt-4 mb-4 font-semibold">
+                        <div >
+                            <h3>Md. Ariful Islam</h3>
+                            <p>CEO and Founder</p>
+                        </div>
+
+                        <div>
+                            <h3>Md. Shariful Islam</h3>
+                            <p>Manager</p>
+                        </div>
+
+                    </div>
+                    <div className="flex justify-around mt-4 mb-4 font-semibold mr-4">
+                        <div>
+                            <h3>Md. Arif Islam</h3>
+                            <p>Receptionist</p>
+                        </div>
+                        <div>
+                            <h3>Md. Asif Islam</h3>
+                            <p>Staff</p>
+                        </div>
+
+                    </div>
+                    <div className="flex justify-around mt-4 mb-4 font-semibold mr-2">
+
+                        <div>
+                            <h3>Md. Sobuj Islam</h3>
+                            <p>Staff</p>
+                        </div>
+                        <div>
+                            <h3>Md. Salam Islam</h3>
+                            <p>Staff</p>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>

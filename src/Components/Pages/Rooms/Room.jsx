@@ -91,7 +91,7 @@ const Room = ({ room }) => {
                         </div>
                         <textarea className="textarea textarea-accent mt-4 w-[360px]" name="area" placeholder="Comment"></textarea>
                        
-                        <p>{moment().format('MMMM Do YYYY, h:mm:ss a')}</p>
+                        <p className="text-center">{moment().format('MMMM Do YYYY, h:mm:ss a')}</p>
 
                         <div className="form-control mt-6">
                             <button
@@ -106,7 +106,7 @@ const Room = ({ room }) => {
                 
             </div>
             ) :
-            <p className="text-center font-bold text-red-600 text-x mt-6">You have not booked this room yet. <br /> That is why there is no review option</p>
+            <p className="text-center font-bold text-red-600 text-x mt-6 border border-purple-600 rounded-xl h-[380px]">You have not booked this room yet. <br /> That is why there is no review option</p>
            }
         </div>
     );
