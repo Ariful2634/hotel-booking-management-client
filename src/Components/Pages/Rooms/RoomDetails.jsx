@@ -45,7 +45,7 @@ const RoomDetails = () => {
 
     // const review = getReview.map(rev=>rev)
     const reviews = getReview.filter(view => view.reviewId == _id)
-    console.log(reviews)
+    console.log(reviews.length)
 
     const handleDisable = () => {
         Swal.fire({
@@ -96,7 +96,7 @@ const RoomDetails = () => {
 
             <h2 className="text-blue-600 text-center font-bold italic mt-28 mb-4 text-2xl">Reviews From Our User</h2>
             {
-                reviews ? ( <div>
+                reviews.length > 0 ? ( <div>
                     {
                          reviews.map(rev=><Review key={rev._id} rev={rev}></Review>) 
                            

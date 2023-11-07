@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 
-const Book = ({ book, books, setBooks }) => {
+const Book = ({ book,  booking,setBooking }) => {
     console.log(book)
 
     const {_id, room_image, RoomName, date, price } = book
@@ -42,8 +42,8 @@ const Book = ({ book, books, setBooks }) => {
                                     'Your file has been deleted.',
                                     'success'
                                   )
-                                  const reamining = books.filter(book=>book._id!==_id)
-                                  setBooks(reamining)
+                                  const reamining = booking.filter(book=>book._id!==_id)
+                                  setBooking(reamining)
                             }
                         })
     
