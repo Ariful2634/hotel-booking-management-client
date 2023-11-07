@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import axios from "axios";
 import { useContext, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from "sweetalert2";
@@ -70,7 +70,7 @@ const Bookings = () => {
                 </div>
                 <div className="form-control w-1/2 lg:ml-4">
                         <label className="label">
-                            <span className="label-text">Due Date</span>
+                            <span className="label-text">Booking Date</span>
                         </label>
                         <div className="input-group">
                             <DatePicker
@@ -107,6 +107,9 @@ const Bookings = () => {
                 <button className="btn btn-block  bg-[#FF3811]">Submit</button>
             </div>
         </form>
+        <div className="text-center mt-4">
+            <Link to={`/summery/${_id}`}><button className="btn btn-info">Summery</button></Link>
+        </div>
     </div>
     );
 };

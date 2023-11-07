@@ -13,7 +13,7 @@ const Room = ({ room }) => {
 
     const { user } = useContext(AuthContext)
     const [review, setReview] = useState([])
-    // const [rev, setRev] = useState([])
+    const [rev, setRev] = useState([])
 
     const { _id, room_image, room_name, room_price } = room;
 
@@ -34,6 +34,27 @@ const Room = ({ room }) => {
 
  
     const reviews = review.find(review => review.RoomName == room_name)
+
+
+    useEffect(() => {
+        fetch('http://localhost:5000/review')
+            .then(res => res.json())
+            .then(data => setRev(data))
+    }, [])
+
+    // const review = getReview.map(rev=>rev)
+    const count = rev.filter(view => view.room_name ==room_name)
+    
+    console.log(count)
+    // console.log(room._id)
+
+    let co = 0;
+
+    if(count){
+       co= co+count.length;
+        
+    }
+    
     
 
     const handleReview = e=>{
@@ -42,7 +63,7 @@ const Room = ({ room }) => {
         const name = form.name.value;
         const des = form.area.value;
         const rating = form.rating.value;
-        const send = {name,rating,time, reviewId:_id,des}
+        const send = {name,rating,time, reviewId:_id,des,room_name}
         console.log(send)
 
         axios.post('http://localhost:5000/review', send)
@@ -73,12 +94,17 @@ const Room = ({ room }) => {
 
                 </div>
             </Link>
+            <div>
+                <p className="font-bold text-center mt-2">Reviews of this room is: {
+                    co
+                    } </p>
+            </div>
            {
             reviews ? (
                 <div className="shadow-xl w-96 mt-5 p-2">
                      <form onSubmit={handleReview}>
                         <div className=" form-control" >
-                            <label className="label">
+                      <label className="label">
                                 <span className="label-text">Username</span>
                             </label>
                             <input type="text" placeholder="Username" name="name" className="input input-bordered" required />

@@ -20,6 +20,8 @@ import Bookings from './Components/Pages/Bookings/Bookings';
 import UpdateBooking from './Components/Pages/Bookings/UpdateBooking';
 import AboutUs from './Components/Pages/About/AboutUs';
 import ContactUs from './Components/Pages/About/ContactUs';
+import ViewSummery from './Components/Pages/Bookings/ViewSummery';
+
 
 const router = createBrowserRouter([
   {
@@ -60,6 +62,11 @@ const router = createBrowserRouter([
       {
         path:'/contact',
         element:<ContactUs></ContactUs>
+      },
+      {
+        path:'/summery/:id',
+        element:<ViewSummery></ViewSummery>,
+        loader:()=>fetch('http://localhost:5000/rooms')
       }
     ]
   },

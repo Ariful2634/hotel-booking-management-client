@@ -15,7 +15,7 @@ const Rooms = () => {
   const filteredRooms = () => {
     return rooms?.filter((room) => {
       const roomPrice = room?.room_price; 
-      console.log(roomPrice)
+      // console.log(roomPrice)
 
       if (priceFilter.min === null && priceFilter.max === null) {
         return true;
