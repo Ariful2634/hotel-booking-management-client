@@ -12,7 +12,7 @@ const Book = ({ book, books, setBooks }) => {
     const {_id, room_image, RoomName, date, price } = book
 
     const deadline = new Date(date)
-   const time =  deadline.setDate(deadline.getDate()-2)
+   const time =  deadline.setDate(deadline.getDate()-1)
    console.log(time)
 
     const handleDelete = (_id)=>{
