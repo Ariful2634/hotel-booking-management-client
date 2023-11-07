@@ -108,7 +108,7 @@ const Bookings = () => {
             </div>
         </form>
         <div className="text-center mt-4">
-            <Link to={`/summery/${_id}`}><button className="btn btn-info">Summery</button></Link>
+            <Link to={`/summery/${_id}`}><button className="btn btn-info">View Summery</button></Link>
         </div>
     </div>
     );

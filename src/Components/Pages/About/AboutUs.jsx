@@ -1,8 +1,16 @@
+import { Helmet } from "react-helmet";
 
 
 const AboutUs = () => {
     return (
         <div>
+
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>About Us</title>
+                <link rel="canonical" href="http://localhost:5173/about" />
+            </Helmet>
+
             <h1 className="font-bold text-purple-600 text-4xl text-center mb-4">About Us</h1>
             <div className="shadow-xl p-8 rounded-lg border border-blue-600">
                 <h2 className="font-bold text-blue-600 text-2xl text-center mb-4">Our Story</h2>

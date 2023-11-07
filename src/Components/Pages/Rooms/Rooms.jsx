@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Room from "./Room";
+import {Helmet} from "react-helmet";
 
 const Rooms = () => {
   const [rooms, setRooms] = useState([]);
@@ -33,6 +34,14 @@ const Rooms = () => {
  
   return (
     <div >
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Available Rooms</title>
+                <link rel="canonical" href="http://localhost:5173/rooms" />
+            </Helmet>
+            
+
+
       <h2 className="text-center text-5xl font-bold text-blue-600 italic mt-6">
         Available Rooms
       </h2>

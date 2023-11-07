@@ -1,7 +1,7 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FaShoppingCart } from 'react-icons/fa';
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
+import {  useEffect, useState } from "react";
+// import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 import Review from "./Review";
@@ -9,7 +9,7 @@ import Review from "./Review";
 
 const RoomDetails = () => {
 
-    const { user } = useContext(AuthContext)
+    // const { user } = useContext(AuthContext)
 
     const [avil, setAvail] = useState([])
     const rooms = useLoaderData()
@@ -21,7 +21,7 @@ const RoomDetails = () => {
     const { _id } = room
     
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = 'http://localhost:5000/bookings'
 
     useEffect(() => {
         fetch(url)
@@ -96,12 +96,20 @@ const RoomDetails = () => {
 
             <h2 className="text-blue-600 text-center font-bold italic mt-28 mb-4 text-2xl">Reviews From Our User</h2>
             {
-                reviews ? reviews.map(rev=><Review key={rev._id} rev={rev}></Review>) :
-                    <div>
-                        <h2 className="text-blue-600 text-center font-bold italic mt-28 mb-4 text-2xl">Reviews From Our User</h2>
-                        <p className="font-bold text-red-600">There is no review for this room</p>
-                    </div>
+                reviews ? ( <div>
+                    {
+                         reviews.map(rev=><Review key={rev._id} rev={rev}></Review>) 
+                           
+                    }
+                    </div>) :
+                    
+                    (<div>
+                    <h2 className="text-blue-600 text-center font-bold italic mt-28 mb-4 text-2xl">Reviews From Our User</h2>
+                    <p className="font-bold text-red-600">There is no review for this room</p>
+                </div>)
+
             }
+           
         </div>
     );
 };
