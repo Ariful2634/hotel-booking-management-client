@@ -94,7 +94,7 @@ const RoomDetails = () => {
             </div>
            </div>
 
-            <h2 className="text-blue-600 text-center font-bold italic mt-28 mb-4 text-2xl">Reviews From Our User</h2>
+           
             {
                 reviews.length > 0 ? ( <div>
                     {
@@ -105,7 +105,7 @@ const RoomDetails = () => {
                     
                     (<div>
                     <h2 className="text-blue-600 text-center font-bold italic mt-28 mb-4 text-2xl">Reviews From Our User</h2>
-                    <p className="font-bold text-red-600">There is no review for this room</p>
+                    <p className="font-bold text-center text-red-600">There is no review for this room</p>
                 </div>)
 
             }
