@@ -21,12 +21,14 @@ import UpdateBooking from './Components/Pages/Bookings/UpdateBooking';
 import AboutUs from './Components/Pages/About/AboutUs';
 import ContactUs from './Components/Pages/About/ContactUs';
 import ViewSummery from './Components/Pages/Bookings/ViewSummery';
+import Error from './ErrorPage/Error';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:'/',

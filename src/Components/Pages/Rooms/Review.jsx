@@ -4,9 +4,11 @@ import { AiTwotoneStar } from 'react-icons/ai';
 const Review = ({rev}) => {
     console.log(rev)
     return (
-        <div className='flex justify-center'>
+        <div>
+            <h2 className="text-blue-600 text-center font-bold italic mt-20 mb-8 text-2xl">Reviews From Our User</h2>
+            <div className='flex justify-center'>
             <div >
-                    
+            
                     <div className="shadow-xl p-8 space-y-4 lg:w-[500px] rounded-lg">
                         <h2 className="font-bold text-xl"> <span className="text-blue-600">Name: </span> {rev?.name}</h2>
                         <p className="font-bold text-xl flex items-center gap-1"><span className="text-blue-600">Rating: </span>    {rev?.rating}<AiTwotoneStar></AiTwotoneStar></p>
@@ -14,6 +16,7 @@ const Review = ({rev}) => {
                         <p className="font-bold text-xl">{rev?.time}</p>
                     </div>
                 </div>
+        </div>
         </div>
     );
 };
