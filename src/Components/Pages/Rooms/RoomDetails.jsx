@@ -21,7 +21,7 @@ const RoomDetails = () => {
     const { _id } = room
     
 
-    const url = 'http://localhost:5000/bookings'
+    const url = 'https://hotel-booking-management-server.vercel.app/bookings'
 
     useEffect(() => {
         fetch(url)
@@ -38,7 +38,7 @@ const RoomDetails = () => {
 
     // review
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://hotel-booking-management-server.vercel.app/review')
             .then(res => res.json())
             .then(data => setGetReview(data))
     }, [])

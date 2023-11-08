@@ -41,7 +41,7 @@ const Bookings = () => {
          }
          console.log(booking)
 
-         axios.post('http://localhost:5000/bookings',booking)
+         axios.post('https://hotel-booking-management-server.vercel.app/bookings',booking)
          .then(res=>{
             console.log(res.data)
             if(res.data.insertedId){

@@ -30,7 +30,7 @@ const Book = ({ book,  booking,setBooking }) => {
                 if (result.isConfirmed) {
     
                    
-                    fetch(`http://localhost:5000/bookings/${_id}`, {
+                    fetch(`https://hotel-booking-management-server.vercel.app/bookings/${_id}`, {
                         method: "DELETE"
                     })
                         .then(res => res.json())

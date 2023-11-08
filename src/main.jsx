@@ -45,18 +45,18 @@ const router = createBrowserRouter([
       {
         path:'/roomDetails/:id',
         element:<RoomDetails></RoomDetails>,
-        loader:()=>fetch('http://localhost:5000/rooms')
+        loader:()=>fetch('https://hotel-booking-management-server.vercel.app/rooms')
       },
       {
         path:'/bookNow/:id',
         element:<PrivateRoute><Bookings></Bookings></PrivateRoute>,
-        loader:()=>fetch('http://localhost:5000/rooms')
+        loader:()=>fetch('https://hotel-booking-management-server.vercel.app/rooms')
         
       },
       {
         path:'/update/:id',
         element:<PrivateRoute><UpdateBooking></UpdateBooking></PrivateRoute>,
-        loader:()=>fetch('http://localhost:5000/bookings')
+        loader:()=>fetch('https://hotel-booking-management-server.vercel.app/bookings')
       },{
         path:'about',
         element:<AboutUs></AboutUs>
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
       {
         path:'/summery/:id',
         element:<ViewSummery></ViewSummery>,
-        loader:()=>fetch('http://localhost:5000/rooms')
+        loader:()=>fetch('https://hotel-booking-management-server.vercel.app/rooms')
       }
     ]
   },

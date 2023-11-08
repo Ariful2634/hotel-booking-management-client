@@ -10,7 +10,7 @@ const MyBooking = () => {
     const [booking, setBooking] = useState([])
 
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = `https://hotel-booking-management-server.vercel.app/bookings?email=${user?.email}`
     console.log(booking)
 
     useEffect(() => {

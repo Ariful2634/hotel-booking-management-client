@@ -17,7 +17,7 @@ const Room = ({ room }) => {
 
     const { _id, room_image, room_name, room_price } = room;
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`
+    const url = `https://hotel-booking-management-server.vercel.app/bookings?email=${user?.email}`
 
     useEffect(() => {
         fetch(url)
@@ -37,7 +37,7 @@ const Room = ({ room }) => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/review')
+        fetch('https://hotel-booking-management-server.vercel.app/review')
             .then(res => res.json())
             .then(data => setRev(data))
     }, [])
@@ -66,7 +66,7 @@ const Room = ({ room }) => {
         const send = {name,rating,time, reviewId:_id,des,room_name}
         console.log(send)
 
-        axios.post('http://localhost:5000/review', send)
+        axios.post('https://hotel-booking-management-server.vercel.app/review', send)
         .then(res=>{
             console.log(res.data)
             if(res.data.insertedId){
