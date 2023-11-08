@@ -1,8 +1,12 @@
-# React + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Book My Hotel (Hotel Booking Management)
 
-Currently, two official plugins are available:
+# Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* User can create account and login into the website.
+* User can login with google account.
+* User can see the rooms and also room details.
+* User can book a room.
+* User can see the booked room in my bookings.
+* User can not book a booked room.
