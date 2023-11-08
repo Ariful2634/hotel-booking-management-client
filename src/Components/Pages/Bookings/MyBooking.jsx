@@ -8,7 +8,7 @@ const MyBooking = () => {
 
     const { user } = useContext(AuthContext)
     const [booking, setBooking] = useState([])
-
+    
 
     const url = `https://hotel-booking-management-server.vercel.app/bookings?email=${user?.email}`
     console.log(booking)
