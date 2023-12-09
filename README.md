@@ -11,6 +11,8 @@
 * User can see the booked room in my bookings.
 * User can not book a booked room.
 
+# Technology Used
+Reactjs, Tailwind CSS, Daisy UI, MongoDB, Firebase, Jwt etc.
 
 # Project Link
 
